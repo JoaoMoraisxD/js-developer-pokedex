@@ -6,8 +6,9 @@ const limit = 10
 let offset = 0;
 
 function convertPokemonToLi(pokemon) {
+    storagePokemon = pokemon.number    
     return `
-        <li class="pokemon ${pokemon.type}">
+        <li class="pokemon ${pokemon.type}" onclick="cliquePokePage(${pokemon.number})">
             <span class="number">#${pokemon.number}</span>
             <span class="name">${pokemon.name}</span>
 
@@ -30,7 +31,15 @@ function loadPokemonItens(offset, limit) {
     })
 }
 
+function cliquePokePage(pokemonID){
+
+    window.location.href = `pokepage.html`
+    sessionStorage.setItem('pokemonatual', pokemonID - 1)
+ }
+
+
 loadPokemonItens(offset, limit)
+
 
 loadMoreButton.addEventListener('click', () => {
     offset += limit

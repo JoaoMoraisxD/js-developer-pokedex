@@ -84,6 +84,11 @@
     margin: .5rem;
     padding: 1rem;
     border-radius: 1rem;
+    background-image: url(img/pokeball.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 80px;
+    cursor: pointer;
 }
 
 .pokemon .number {
